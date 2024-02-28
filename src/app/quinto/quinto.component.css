@@ -1,0 +1,70 @@
+html,
+body {
+  height: 100vh;
+}
+
+.landing {
+  min-height: 100%;
+}
+
+.register {
+  background-color: #25abe9;
+  background: linear-gradient(135deg, #051f4d 0%, #25abe9 100%);
+  color: #fff;
+}
+
+.register h1 {
+  margin-right: 4rem;
+}
+
+.login {
+  background-color: #ddd;
+}
+
+.login h1 {
+  margin-left: 4rem;
+}
+
+.logo {
+  background-color: #7b7b7b;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 1rem;
+  margin: -4rem;
+  position: relative;
+}
+
+@media (max-width: 768px) or (max-height: 300px) {
+  .logo {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 0.75rem;
+    margin: -2.5rem;
+  }
+  
+  .register h1 {
+    margin-right: 0;
+  }
+  
+  .login h1 {
+    margin-left: 0;
+    margin-top: 2.5rem;
+  }
+}
+
+@media (min-width: 1400px) and (min-height: 600px) {
+  .logo {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 1.35rem;
+    margin: -6rem;
+  }
+  
+  .register h1 {
+    margin-right: 6rem;
+  }
+  
+  .login h1 {
+    margin-left: 6rem;
+  }
+}

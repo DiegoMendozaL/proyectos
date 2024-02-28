@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+  }
+  html {
+    font: 16px/1.5 sans-serif;
+  }
+  body {
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background: #212;
+  }
+  
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .gallery {
+    --img-width: 300px;
+    --img-height: 250px;
+    display: flex;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    gap: 0.125rem;
+  }
+  .gallery a {
+    position: relative;
+    display: block;
+    flex-grow: 1;
+    flex-basis: 0;
+    height: var(--img-height);
+    overflow: hidden;
+    border-radius: 0.5rem;
+    transition: 0.5s ease-in-out;
+    will-change: transform, contents;
+  }
+  .gallery a:hover {
+    transition-delay: 0s;
+    flex-basis: 300px;
+  }
+  .gallery img {
+    width: 100%;
+    height: var(--img-height);
+    object-fit: cover;
+    transition: 0.5s ease-in-out;
+    will-change: contents;
+  }
+  .gallery:hover img {
+    filter: grayscale(1);
+  }
+  .gallery a:hover img {
+    filter: grayscale(0);
+  }
+  .gallery .text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 1.75rem;
+    color: #fff;
+    background: linear-gradient(to top, #0008, transparent);
+    font-weight: 700;
+    opacity: 0;
+    transition: 0.25s ease-in-out;
+    will-change: transform, contents;
+  }
+  .gallery a:hover .text {
+    opacity: 1;
+    transition-duration: 0.5s;
+    transition-delay: 0.5s;
+  }
+  .gallery .text span {
+    display: block;
+    margin-top: 0.125rem;
+    font-size: 0.8em;
+    line-height: 1.5em;
+    font-weight: 400;
+  }

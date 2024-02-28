@@ -1,0 +1,163 @@
+/*------------------------------------*\
+    $INDEX - Search with $ sign
+\*------------------------------------*/
+
+/**
+ * VARIABLES......................
+ * BASIC PROPERTIES...............
+ * ANIMATION PROPERTIES...........
+ * BLOCKS PROPERTIES..............
+ * BLOCK2 - BLOCK3................
+ * BUTTON.........................
+ * STICKY FOOTER..................
+ * RESPONSIVE.....................
+ */
+
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+/* Dark blue */
+
+/*------------------------------------*\
+    $BASIC PROPERTIES
+\*------------------------------------*/
+*, *:before, *:after {
+  box-sizing: border-box;
+  transition: all .4s;
+}
+
+html, body, .container {
+	height: 100%;
+	font-family: 'Heebo', Arial, sans-serif;
+	font-weight: 400;
+}
+body {
+	background: #ffffff url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1220116/background-border.jpg');
+	font-size: 18px;
+	margin-top: 60px;
+}
+h1 {
+	font-weight: 700;
+	margin-bottom: 0;
+}
+h2 {
+	font-weight: 500;
+	font-size: 1.6em;
+	margin: 0.7em 0;
+}
+.mark-block {
+  position:relative;
+}
+.mark-block::before {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	bottom: 0;
+	left: 10px;
+	width: 100%;
+	height: 50%;
+	background: secondary-color;
+	transform: scale3d(1,1,1);
+	transform-origin: 50% 100%;
+	transition: transform 0.3s;
+	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+}
+.active::before {
+	transform: scale3d(1,1,1);
+	transform-origin: 50% 0%;
+}
+/* Mark animation inspired by https://tympanus.net/Development/MenuHoverEffects */
+
+::selection {
+	background: primary-color;
+	color: #ffffff;
+}
+::-moz-selection {
+	background: primary-color;
+	color: #ffffff;
+}
+
+/*------------------------------------*\
+    $ANIMATION PROPERTIES
+\*------------------------------------*/
+
+#block1__photo {
+	animation-duration: 1s;
+	animation-delay: 0.5s;
+}
+#block2__text, #block3__photo {
+	animation-duration: 1s;
+	animation-delay: 0.3s;
+}
+#block1__elements {
+	animation-duration: 1.5;
+	animation-delay: 0.8s;
+}
+#block2__photo, #block3__text {
+	animation-duration: 1s;
+	animation-delay: 0.6s;
+}
+#button-more {
+	animation-delay: 0.5s;
+}
+
+/*------------------------------------*\
+    $BLOCKS PROPERTIES
+\*------------------------------------*/
+
+#block1 {
+	margin-bottom: 2.3em;
+}
+#block2, #block3 {
+	margin-bottom: 5em;
+}
+#block1 img, #block2 img, #block3 img {
+	max-width: 100%;
+}
+
+/*------------------------------------*\
+    $BLOCK1
+\*------------------------------------*/
+
+#block1__photo {
+	z-index: 5;
+}
+#block1__elements {
+	background-color: #ededed;
+	z-index: 0;
+	position: relative;
+	top: -60px;
+}
+#block1__elements__text {
+	padding-top: 80px;
+}
+
+/*------------------------------------*\
+    $BLOCK2 - $BLOCK3
+\*------------------------------------*/
+
+#block2__photo, #block3__photo {
+	text-align: center;
+	margin-bottom: 1.5em;
+}
+#block3__photo {
+	margin-bottom: 0;
+}
+#block2__photo img, #block3__photo img {
+	max-width: 80%;
+	box-shadow: 15px 15px primary-color;
+}
+#block3__photo img {
+	box-shadow: -15px -15px secondary-color;
+}
+#block2__text__line, #block3__text__line {
+	margin-bottom: 1.4em;
+}
+
+/*------------------------------------*\
+    $BUTTON
+\*------------------------------------*/
+
+#button-more {
+	margin: 0;
+}
